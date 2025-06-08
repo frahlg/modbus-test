@@ -1,0 +1,24 @@
+# Quick Modbus TCP Test Configuration (for faster testing)
+
+# Modbus server settings
+modbus:
+  host: "192.168.1.100"  # Change to your inverter's IP address
+  port: 502
+  unit_id: 1  # Modbus slave ID
+  timeout: 3  # Connection timeout in seconds
+
+# Test parameters (quick version)
+test:
+  duration_minutes: 1  # Short 1-minute tests
+  frequencies: [1, 2, 5]  # Just a few frequencies
+  register_counts: [1, 10, 50]  # Fewer register counts
+  
+# Register ranges to test (holding registers)
+registers:
+  start_address: 40001  # Starting register address
+
+# Output settings  
+output:
+  save_detailed_logs: true
+  save_summary_stats: true
+  output_directory: "test_results" 
