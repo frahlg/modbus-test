@@ -14,9 +14,15 @@ A simple tool to test Modbus TCP communication performance with various frequenc
 
 ## Quick Start
 
-1. **Install dependencies:**
+1. **Setup environment with uv:**
    ```bash
-   pip install -e .
+   # Install uv if you don't have it
+   curl -LsSf https://astral.sh/uv/install.sh | sh
+   
+   # Create virtual environment and install dependencies
+   uv venv
+   source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+   uv pip install "pymodbus[tcp]>=3.0.0" pyyaml pandas tabulate
    ```
 
 2. **Configure your inverter settings:**
@@ -132,9 +138,10 @@ test:
 ## Requirements
 
 - Python 3.9+
+- uv (fast Python package installer)
 - pymodbus 3.0+
 - pandas
 - pyyaml
 - tabulate
 
-The tool automatically installs dependencies when you run `pip install -e .`
+Dependencies are installed via `uv pip install` as shown in the Quick Start section.
